@@ -1,0 +1,14 @@
+# RStudio
+.Rproj.user/
+.RData
+.Rhistory
+auto_save/
+
+# renv
+renv/library/
+renv/activate.R
+
+# Data
+data/raw/
+**/*.csv
+**/*.rds
