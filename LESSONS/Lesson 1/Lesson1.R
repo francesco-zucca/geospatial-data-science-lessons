@@ -3,7 +3,8 @@
 # Loading libraries
 
 library(sf)
-library(tidyverse) 
+library(tidyverse)
+library(spData)
 
 # ------------------------------------
 # 1. CREATING ARTIFICIAL DATA WITH SF
@@ -31,3 +32,22 @@ ggplot() +
   geom_sf(data = multipoint) +
   geom_sf(data = linestring) +
   geom_sf(data = polygon)
+
+# --------------------------
+# 2. MAP OF WORLD AIRPORTS
+# --------------------------
+
+# Importing data
+
+airports <- st_read('/Users/franz/Data_Science_R/Geospatial_Data_Science/Geospatial Data Science Lessons/LESSONS/Lesson 1/ne_10m_airports')
+airports
+
+# Importing world data from spData
+spworld <- world
+world
+
+# Plotting the airport map
+
+ggplot() +
+  geom_sf(data = spworld) + # add world map
+  geom_sf(data = airports, aes(color = type))
